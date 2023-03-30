@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+    device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 30px;
+      }
+      #source-link {
+        height: 30px;
+        width: 70%;
+      }
+      #generate {
+        display: inline-block;
+        background-color: #333;
+        color: #fff;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: all 0.2s ease-in-out;
+      }
+      .link {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="source-link" aria-placeholder="wpisz link..." />
+    <button id="generate">Stwórz</button>
+    <div class="link">code: <span id="code"></span></div>
+    <div class="link">Pełny link 1: <span id="full-short-link"></span></div>
+    <div class="link">Pełny link 2: <span id="full-short-link2"></span></div>
+    <div class="link">Pełny link 3: <span id="full-short-link3"></span></div>
+  </body>
+
+  <script>
+    window.onload = function () {
+      document
+        .getElementById("generate")
+        .addEventListener("click", shrtFunction);
+    };
+
+    function shrtFunction() {
+      let url = document.getElementById("source-link").value;
+      fetch("https://api.shrtco.de/v2/shorten?url=" + url).then((response) =>
+        response.json().then((data) => functData(data))
+      );
+    }
+    function functData(data) {
+      console.log(data);
+      let result = data.result;
+
+      if (result) {
+        setLink("code", result.full_short_link);
+        setLink("full-short-link", result.full_short_link);
+        setLink("full-short-link2", result.full_short_link2);
+        setLink("full-short-link3", result.full_short_link3);
+      } else {
+        console.log("pusty string");
+      }
+    }
+
+    function setLink(id, shUrl) {
+      document.getElementById(id).innerHTML =
+        "<a href='" + shUrl + "'>" + shUrl + "</a>";
+    }
+  </script>
+</html>
