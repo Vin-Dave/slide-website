@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>To-do Task</h1>
+      <form id="task-form">
+        <input type="text" id="task-input" placeholder="Add task" />
+        <button type="submit" id="add-task-btn">Add</button>
+      </form>
+      <div class="task-list">
+        <ul id="tasks"></ul>
+      </div>
+      <div class="filters">
+        <button class="filter-btn" id="all-btn">All</button>
+        <button class="filter-btn" id="completed-btn">Completed</button>
+        <button class="filter-btn" id="uncompleted-btn">Uncompleted</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
