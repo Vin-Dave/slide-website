@@ -1,82 +1,192 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
 }
 
-header {
-  background-color: #333;
+:root {
+  --deep-dark: rgb(26, 26, 26);
+  --light-dark: rgb(79, 82, 92);
+  --light-blue: rgb(116, 2, 161);
+  --dark-blue: rgb(51, 3, 58);
+  --light: rgb(245, 245, 245);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  margin-top: 120px;
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--light);
+}
+
+h1 {
+  color: var(--light);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.fas {
+  pointer-events: none;
+}
+
+.todo {
+  width: 800px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 4px 4px 5px rgba(82, 82, 82, 0.4);
+  text-align: center;
+}
+
+.header {
+  border-radius: 5px 5px 0 0;
+  padding: 40px;
+  background-image: linear-gradient(340deg, #390d60 0%, #3b005d 100%);
+}
+
+.todo-input-content {
+  width: 80%;
+  padding: 10px 20px;
+  margin-right: 20px;
+  border: none;
+  border-radius: 5px;
+  color: var(--light-dark);
+  background-color: var(--light);
+}
+
+.error-msg {
+  margin-top: 20px;
+  color: var(--dark-blue);
+}
+
+.btn-add-task {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 5px;
+  color: var(--deep-dark);
+  background-color: var(--light);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.btn-add-task:hover {
   color: #fff;
+  background-color: var(--light-dark);
+}
+
+.todolist-container {
+  padding: 20px 0;
+}
+
+.todolist-container h3 {
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.todolist-container li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px;
+  padding-left: 20px;
+  text-align: left;
+  list-style: none;
+  background-color: var(--light);
+}
+
+.tools-hero {
+  display: inline-block;
+}
+
+.tools-hero button {
+  padding: 15px 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tools-hero button:hover {
+  background-color: #ddd;
+}
+
+.complete {
+  color: var(--light-blue);
+}
+
+.edit {
+  font-weight: bold;
+  color: rgb(15, 179, 69);
+}
+
+.delete {
+  color: tomato;
+}
+
+.completed {
+  font-size: 12px;
+  color: var(--light-dark);
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+.button-msg {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  color: var(--light);
+  background-color: var(--light-dark);
+  border-radius: 5px;
+}
+
+.button-msg h3 {
   padding: 20px;
 }
 
-main {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.note-form {
+.button-msg-info {
+  color: var(--light);
   margin-bottom: 20px;
 }
 
-.note-form label {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.note-form textarea {
-  display: block;
-  width: 100%;
-  height: 100px;
+.button-msg-body {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
   padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  resize: none;
 }
 
-.note-form button {
-  background-color: #333;
-  color: #fff;
+.button-msg-input {
+  width: 100%;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
+  color: var(--light-dark);
+  background-color: var(--light);
 }
 
-.note-form button:hover {
-  background-color: #444;
-}
-
-.note-item {
-  background-color: #f5f5f5;
-  padding: 10px;
-  margin: bottom 10px;
-}
-
-.note-item:hover {
-  background-color: #e0e0e0;
-}
-
-.note-item p {
-  margin: 0;
-}
-
-.note-item button {
-  background-color: #f44336;
-  color: #fff;
-  padding: 5px 10px;
+.button-msg-btn {
+  width: 30%;
+  display: inline-block;
+  padding: 10px 22px;
+  margin: 20px;
   border: none;
   border-radius: 5px;
+  color: var(--deep-dark);
+  background-color: var(--light);
+  text-transform: uppercase;
   cursor: pointer;
-  float: right;
+  transition: color 0.3s, background-color 0.3s;
 }
 
-.note-item button:hover {
-  background-color: #d32f2f;
-}
-
-.hidden {
-  display: none;
+.button-msg-btn:hover {
+  color: #fff;
+  background-color: var(--light-blue);
 }
