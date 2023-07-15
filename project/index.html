@@ -1,21 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Aplikacja do tworzenia notatek</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/d5fb48cba2.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
   </head>
   <body>
-    <header>
-      <h1>Aplikacja do tworzenia notatek</h1>
-    </header>
-    <main>
-      <div class="note-form">
-        <label for="note-input">Dodaj nową notatkę:</label>
-        <textarea id="note-input"></textarea>
-        <button id="add-note-btn">Dodaj notatkę</button>
+    <div class="todo">
+      <div class="header">
+        <h1>ToDo Lista</h1>
+        <input
+          type="text"
+          class="todo-input-content"
+          placeholder="Wpisz treść zadania!"
+        />
+        <button class="btn-add-task">Add</button>
       </div>
-      <ul id="note-list"></ul>
-    </main>
-    <script src="script.js"></script>
+      <div class="todolist-container">
+        <h3>Lista zadań:</h3>
+        <p class="error-msg">Brak zadań na liście.</p>
+        <ul>
+          <li data-id="test1">
+            Wypić kawę
+            <div class="tools-hero">
+              <button class="complete"><i class="fas fa-check"></i></button>
+              <button class="edit">EDIT</button>
+              <button class="delete"><i class="fas fa-times"></i></button>
+            </div>
+          </li>
+          <li data-id="test2">
+            Zjeść śniadanie
+            <div class="tools-hero">
+              <button class="complete"><i class="fas fa-check"></i></button>
+              <button class="edit">EDIT</button>
+              <button class="delete"><i class="fas fa-times"></i></button>
+            </div>
+          </li>
+          <li data-id="test3">
+            Umyć okna
+            <div class="tools-hero">
+              <button class="complete"><i class="fas fa-check"></i></button>
+              <button class="edit">EDIT</button>
+              <button class="delete"><i class="fas fa-times"></i></button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="button-msg">
+      <h3>Edytuj zadanie:</h3>
+      <div class="button-msg-body">
+        <p class="button-msg-info"></p>
+        <input
+          type="text"
+          class="button-msg-input"
+          placeholder="Wprowadź nową treść zadania..."
+        />
+        <button class="button-msg-btn accept">Zatwierdź</button>
+        <button class="button-msg-btn cancel">Anuluj</button>
+      </div>
+    </div>
+    <script src="script/script.js"></script>
   </body>
 </html>
