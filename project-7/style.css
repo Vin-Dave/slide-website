@@ -34,8 +34,23 @@ header {
   z-index: 10;
   padding: 10px 110px;
   transition: 0.45s ease;
-  background-color: var(--accent-2);
+  background-color: var(--background-color-accent-1);
 }
 .logo-img-menu img {
-  background: linear-gradient(black, white);
+  width: 200px;
+}
+.navbar {
+  display: flex;
+}
+.navbar a {
+  padding: 10px 20px;
+  color: var(--accent-2);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: 0.45s all linear;
+}
+.navbar a:hover {
+  background-color: var(--background-color-accent-2);
+  border-radius: 5px;
 }
