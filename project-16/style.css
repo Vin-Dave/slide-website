@@ -13,10 +13,12 @@ html {
   height: 100vh;
   overflow: hidden;
   text-align: center;
+  background-color: aqua;
 }
 .team .member {
   position: absolute;
   top: 10%;
+
   text-align: center;
   width: 100%;
   text-transform: uppercase;
@@ -29,6 +31,7 @@ html {
   position: absolute;
   bottom: 0;
   right: -5%;
+
   height: 40%;
   z-index: 1;
   animation: color 7s ease infinite;
@@ -38,10 +41,11 @@ html {
 
   position: absolute;
   bottom: 0;
-  right: -20%;
+  right: 50%;
+  transform: translateX(50%);
   opacity: 0.3;
   background-color: bisque;
-  animation: gray 7s ease infinite;
+  /* animation: gray 7s ease infinite; */
 }
 
 .team h1 {
