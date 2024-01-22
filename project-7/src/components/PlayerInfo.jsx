@@ -1,14 +1,20 @@
 import React, { useState } from "react";
 
 export function PlayerInfo({ name, symbol }) {
+  const [playerName, setPlayerName] = useState(name);
   const [isEditing, setIsEditing] = useState(false);
+
   return (
     <li>
       <span className="player">
         {isEditing ? (
-          <input type="text" />
+          <input
+            type="text"
+            value={playerName}
+            onChange={(e) => setPlayerName(e.target.value)}
+          />
         ) : (
-          <span className="player-name">{name}</span>
+          <span className="player-name">{playerName}</span>
         )}
         <span className="player-symbol">{symbol}</span>
       </span>
